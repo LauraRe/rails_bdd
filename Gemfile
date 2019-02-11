@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
-#these gems run every time your app boots up:
+#The following gems run every time your app boots up:
 gem 'rails', '~> 5.2.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -10,16 +10,19 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
+# compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+# makes navigating your web application faster
 gem 'turbolinks', '~> 5'
-# Reduces boot times through caching; required in config/boot.rb
+# Reduces boot times 
 gem 'bootsnap', '>= 1.1.0', require: false
 
-#these gems are not going to be available in production environment:
+#The following gems are not going to be available in production environment:
 group :development, :test do
   gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'factory_bot_rails'
 end
 
 group :development do
