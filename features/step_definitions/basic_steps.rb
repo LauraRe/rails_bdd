@@ -4,12 +4,9 @@ Given("the following articles exists") do |table|
     end
 end
 
-When("I visit the site") do
-    visit '/'
-end
-
 Given("I visit the {string} page") do |page_name|
-    visit page_name
+    page = page_name == 'landing' ? root_path : page_name
+    visit page
 end
   
 When("I click {string} link") do |click_target|
