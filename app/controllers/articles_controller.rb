@@ -8,6 +8,11 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    @article = Article.new
+  end
+
+  def edit
+    @article = Article.find(params[:id])
   end
 
   def create
@@ -16,8 +21,20 @@ class ArticlesController < ApplicationController
       flash[:success] = 'Article was successfully created.'
       redirect_to @article
     else
-      flash[:error] = "Title can't be blank!"
+      flash[:error] = "Title and text can't be blank!"
       render 'new'
+    end
+  end
+
+  def update
+    @article = Article.find(params[:id])
+   
+    if @article.update(article_params)
+      flash[:success] = 'Article was successfully updated.'
+      redirect_to @article
+    else
+      flash[:error] = "Title and text can't be blank!"
+      render 'edit'
     end
   end
 
