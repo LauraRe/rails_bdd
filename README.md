@@ -1,24 +1,51 @@
-# README
+Running on [Heroku](https://rails-bdd-laurare.herokuapp.com/)
+# Rails BDD
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Prerequisites
 
-Things you may want to cover:
+PostgreSQL
 
-* Ruby version
+## Installing
 
-* System dependencies
+```
+$ git clone https://github.com/LauraRe/rails_bdd.git
+```
+```
+bundle install
+```
+```
+rails db:migrate
+```
+## Running the tests
+Run rake to perform feature and unit tests simultaneously.
+```
+$ rake
+````
+Run cucumber to perform feature tests.
+```
+$ cucumber
+```
+Run RSpec to perform unit tests.
+```
+$ rspec
+```
 
-* Configuration
+## Built With
+[Rails](https://rubyonrails.org/)
 
-* Database creation
+## Author 
+[Laura Reale](https://github.com/LauraRe)  
 
-* Database initialization
+## User Stories 
 
-* How to run the test suite
+    As a visitor,
+    When I visit the landing page of the application
+    I would like to see a list of all articles
 
-* Services (job queues, cache servers, search engines, etc.)
+    As a publisher
+    In order to add relevant content to my news service
+    I would like to be able to create articles
 
-* Deployment instructions
-
-* ...
+    As a publisher
+    In order to keep my content accurate
+    I would like to be able to edit my articles
