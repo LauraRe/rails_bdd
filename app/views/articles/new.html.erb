@@ -1,4 +1,7 @@
+<% content_for :title, "New Article" %>
+
 <h1>New Article</h1>
+
 <%= form_for :article, url: articles_path do |form| %>
     <p>
         <%= form.label :title %><br>
