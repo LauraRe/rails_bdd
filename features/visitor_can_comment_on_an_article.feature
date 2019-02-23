@@ -17,7 +17,7 @@ Feature: Visitor can comment on published articles
     Scenario: Visitor submits a comment
         Given I am reading the article titled "A breaking news"
         And I fill in "Comment" with "This is awesome!"
-        And I fill in "Email" with "laura@gmail.com"
+        And I fill in "Your email" with "laura@gmail.com"
         And I click "Send comment"
         Then I should see "This is awesome!"
         And I should see "laura@gmail.com commented on 2019-02-20"

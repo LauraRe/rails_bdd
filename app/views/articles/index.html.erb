@@ -10,12 +10,20 @@
     </tr>
 
     <% @articles.each do |article| %>
-    <tr>
-        <td><%= article.title %></td>
-        <td><%= article.content %></td>
-        <td><%= link_to 'Show', article_path(article) %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    </tr>
+    <div id="<%= dom_id(article) %>">
+        <tr>
+            <td><%= article.title %></td>
+            <td><%= article.content %></td>
+            <td><%= link_to 'Show', article_path(article) %></td>
+            <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        </tr>
+        <%= form_with url: article_comments_path(article), remote: false do |f| %>
+            <%= f.label :email, 'Your email' %>
+            <%= f.text_field :email %>
+            <%= f.label :comment %>
+            <%= f.text_field :comment %>
+        <% end %>
+    </div>
     <% end %>
 </table>
 
