@@ -13,8 +13,10 @@ Given("I am reading the article titled {string}") do |title|
     @article = Article.find_by_title(title)
 end
 
-When("I click {string} link") do |click_target|
-    click_link click_target
+When("I click {string}") do |element_text|
+    within("#article_#{@article.id}") do
+        click_on element_text
+    end
 end
 
 # When("I fill in {string} with {string}") do |element, value|
@@ -26,10 +28,3 @@ When("I fill in {string} with {string}") do |element, value|
         fill_in element, with: value
     end
 end
-
-When("I click {string}") do |button_name|
-    click_button button_name
-end
-  
-
-   

@@ -8,7 +8,7 @@ Feature: Publisher can edit articles
             | title                | content                          |
             | A breaking news item | Some really breaking action      |
         When I visit the "landing" page
-        When I click "Edit" link
+        When I click "Edit"
 
     Scenario: Publisher can edit an article [Happy Path]
         When I fill in "Title" with "Learning Rails 5"
