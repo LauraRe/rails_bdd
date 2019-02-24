@@ -42,6 +42,10 @@ $ rspec
     When I visit the landing page of the application
     I would like to see a list of all articles
 
+    As a visitor,
+    In order to express my opinion
+    I would like to be able to post comments about an article
+
     As a publisher
     In order to add relevant content to my news service
     I would like to be able to create articles
