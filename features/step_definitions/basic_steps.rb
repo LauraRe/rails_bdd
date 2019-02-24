@@ -9,7 +9,7 @@ Given("I visit the {string} page") do |page_name|
     visit page
 end
   
-Given("I am reading the article titled {string}") do |title|
+Given("(when )I am reading/looking (at )the article titled {string}") do |title|
     @article = Article.find_by_title(title)
 end
 
