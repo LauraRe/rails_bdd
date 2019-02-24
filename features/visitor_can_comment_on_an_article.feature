@@ -3,10 +3,6 @@ Feature: Visitor can comment on published articles
     In order to express my opinion
     I would like to be able to post comments about an article
 
-    As a visitor,
-    In order to be able to show my identity
-    I would like to be able to display my email address with the comment posted
-
     Background:
         Given the following articles exists
             | title                | content                          |

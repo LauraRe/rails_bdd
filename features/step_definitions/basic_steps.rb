@@ -14,17 +14,21 @@ Given("(when )I am reading/looking (at )the article titled {string}") do |title|
 end
 
 When("I click {string}") do |element_text|
-    within("#article_#{@article.id}") do
+    if @article
+        within("#article_#{@article.id}") do
+            click_on element_text
+        end
+    else
         click_on element_text
     end
 end
 
-# When("I fill in {string} with {string}") do |element, value|
-#     fill_in element, with: value
-# end
-
 When("I fill in {string} with {string}") do |element, value|
-    within("#article_#{@article.id}") do
+    if @article
+        within("#article_#{@article.id}") do
+            fill_in element, with: value
+        end
+    else
         fill_in element, with: value
     end
 end
