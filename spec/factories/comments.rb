@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :comment do
     comment { "MyText" }
-    name { "MyString" }
+    email { "MyString" }
     article { nil }
   end
 end
