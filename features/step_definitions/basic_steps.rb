@@ -9,15 +9,26 @@ Given("I visit the {string} page") do |page_name|
     visit page
 end
   
-When("I click {string} link") do |click_target|
-    click_link click_target
+Given("(when )I am reading/looking (at )the article titled {string}") do |title|
+    @article = Article.find_by_title(title)
 end
 
-When("I fill in {string} with {string}") do |field, string|
-    fill_in field, with: string
+When("I click {string}") do |element_text|
+    if @article
+        within("#article_#{@article.id}") do
+            click_on element_text
+        end
+    else
+        click_on element_text
+    end
 end
 
-When("I click {string} button") do |button_name|
-    click_button button_name
+When("I fill in {string} with {string}") do |element, value|
+    if @article
+        within("#article_#{@article.id}") do
+            fill_in element, with: value
+        end
+    else
+        fill_in element, with: value
+    end
 end
-  

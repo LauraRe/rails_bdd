@@ -1,22 +1,39 @@
 <% content_for :title, "Articles" %>
-
-<h1>Articles</h1>
-
-<table>
-    <tr>
-        <th>Title</th>
-        <th>Text</th>
-        <th></th>
-    </tr>
-
-    <% @articles.each do |article| %>
-    <tr>
-        <td><%= article.title %></td>
-        <td><%= article.content %></td>
-        <td><%= link_to 'Show', article_path(article) %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    </tr>
-    <% end %>
-</table>
-
 <%= link_to 'New Article', new_article_path %>
+
+<% if @articles.any? %>
+    <% @articles.each do |article| %>
+        <div id="<%= dom_id(article) %>">
+            <div>
+                <h1>
+                    <%= article.title %>
+                </h1>
+                <%= link_to 'Show', article_path(article) %>
+                <%= link_to 'Edit', edit_article_path(article) %>
+            </div>
+            <p>
+                <%= article.content %>
+            </p>
+
+            <%= form_with url: article_comments_path(article), scope: :comment, remote: false do |f| %>
+            <%= f.label :email, 'Your email' %>
+            <%= f.text_field :email %>
+            <%= f.label :comment %>
+            <%= f.text_field :comment %>
+            <%= f.submit 'Send comment' %>
+            <% end %>
+
+            <% article.comments.each do |comment| %>
+            <p>
+                <%= comment.comment %>
+            </p>
+            <p>
+                <%= comment.email %> commented on
+                <%= comment.created_at.to_date.to_formatted_s(:db) %>
+            </p>
+            <% end %>
+        </div>
+    <% end %>
+<% else %>
+    <h1>There are no articles in the database..</h1>
+<% end %>
