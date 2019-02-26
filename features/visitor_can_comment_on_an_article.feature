@@ -16,6 +16,6 @@ Feature: Visitor can comment on published articles
         And I fill in "Your email" with "laura@gmail.com"
         And I click "Send comment"
         Then I should see "This is awesome!"
-        And I should see "laura@gmail.com commented on 2019-02-24"
+        And I should see "laura@gmail.com commented on 2019-02-26"
         But when I am looking at the article titled "Learn Rails 5"
         Then I should not see "This is awesome!"
