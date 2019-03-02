@@ -43,3 +43,7 @@ When("I fill in {string} with {string}") do |element, value|
         fill_in element, with: value
     end
 end
+
+When("I focus on the comments") do
+    @article = nil
+end
