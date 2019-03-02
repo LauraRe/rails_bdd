@@ -21,4 +21,9 @@ Then("I should not see {string}") do |expected_content|
         expect(page).not_to have_content expected_content
     end
 end
+
+Then("I should see a link {string}") do |expected_text|
+    expect(page).to have_link expected_text
+end
+  
   

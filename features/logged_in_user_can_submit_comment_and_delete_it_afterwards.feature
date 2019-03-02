@@ -24,7 +24,7 @@ Feature: Logged in user can comment on an article and delete it afterwards
         And I click "Send comment"
         Then I should see "This is awesome!"
         And I should see a link "Delete comment"
-        When I click on "Delete comment"
+        When I click "Delete comment"
         And I focus on the comments
         Then I should not see "This is awesome!"
         But I should see "Your comment has been deleted"

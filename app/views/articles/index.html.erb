@@ -31,6 +31,7 @@
                 <%= comment.email %> commented on
                 <%= comment.created_at.to_date.to_formatted_s(:db) %>
             </p>
+            <%= link_to 'Delete comment', '#' %>
             <% end %>
         </div>
     <% end %>

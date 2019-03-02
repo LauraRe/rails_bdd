@@ -19,6 +19,11 @@ Given("(when )I am reading/looking (at )the article titled {string}") do |title|
     @article = Article.find_by_title(title)
 end
 
+Given("I am logged in as {string}") do |email|
+    user = User.find_by(email: email)
+    login_as(user, scope: :user)
+end  
+
 When("I click {string}") do |element_text|
     if @article
         within("#article_#{@article.id}") do
