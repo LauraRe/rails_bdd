@@ -1,8 +1,14 @@
-Given("the following articles exists") do |table|
+Given("the following articles exist") do |table|
     table.hashes.each do |article|
-      Article.create!(article)
+      FactoryBot.create(:article, article)
     end
 end
+
+Given("the following users exist in the database:") do |table|
+    table.hashes.each do |user_attributes|
+        FactoryBot.create(:user, user_attributes)
+    end   
+end  
 
 Given("I visit the {string} page") do |page_name|
     page = page_name == 'landing' ? root_path : page_name

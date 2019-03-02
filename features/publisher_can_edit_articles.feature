@@ -4,7 +4,7 @@ Feature: Publisher can edit articles
     I would like to be able to edit my articles
 
     Background:
-        Given the following articles exists
+        Given the following articles exist
             | title                | content                          |
             | A breaking news item | Some really breaking action      |
         When I visit the "landing" page

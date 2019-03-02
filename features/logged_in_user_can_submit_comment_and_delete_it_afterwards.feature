@@ -1,12 +1,10 @@
-@javascript
-
 Feature: Logged in user can comment on an article and delete it afterwards
     As a commenter
     In order to ensure that my comments are relevant
     I should be able to change my mind and delete a submitted comment
 
     Background:
-        Given the following articles exist in the database:
+        Given the following articles exist:
             | title           | content                          |
             | A breaking news | Some really breaking action      |
             | Learn Rails 5   | Build awesome rails applications |

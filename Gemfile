@@ -16,6 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
 # Reduces boot times 
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'devise'
 
 #The following gems are not going to be available in production environment:
 group :development, :test do

@@ -4,7 +4,7 @@ Feature: Visitor can comment on published articles
     I would like to be able to post comments about an article
 
     Background:
-        Given the following articles exists
+        Given the following articles exist
             | title                | content                          |
             | A breaking news      | Some really breaking action      |
             | Learn Rails 5        | Build awesome rails applications |
@@ -16,6 +16,6 @@ Feature: Visitor can comment on published articles
         And I fill in "Your email" with "laura@gmail.com"
         And I click "Send comment"
         Then I should see "This is awesome!"
-        And I should see "laura@gmail.com commented on 2019-02-26"
+        And I should see "laura@gmail.com commented on 2019-03-02"
         But when I am looking at the article titled "Learn Rails 5"
         Then I should not see "This is awesome!"

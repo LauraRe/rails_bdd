@@ -4,7 +4,7 @@ Feature: Visitor can see a list of articles
     I would like to see a list of current news articles on the site
 
     Scenario: View list of articles on the landing page
-        Given the following articles exists
+        Given the following articles exist
             | title                | content                          |
             | A breaking news item | Some really breaking action      |
             | Learn Rails 5        | Build awesome rails applications |
